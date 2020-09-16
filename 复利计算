@@ -1,0 +1,9 @@
+def invest(amount,rate,time):
+	time=int(time)
+	rate=int(rate)
+	amount=int(amount)
+	print("principal amount :{}".format(amount))
+	for t in range(1,1+time):
+		amount=amount*(1+rate)
+		print("year {}: ${}".format(t,amount))
+invest('100','5','8')
