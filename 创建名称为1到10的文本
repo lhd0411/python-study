@@ -1,0 +1,8 @@
+def text_create():
+    path='/Users/28604/Desktop/'
+    for name in range (1,11):
+        with open(path+str(name)+'.txt','w') as text:
+            text.write(str(name))
+            text.close()
+            print('Done')
+text_create()
