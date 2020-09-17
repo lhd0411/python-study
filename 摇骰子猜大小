@@ -1,0 +1,31 @@
+import random
+def roll_dice(numbers=3,points=None):
+    print('<<<<<ROLL THE DICE!>>>>>')
+    if points is None:
+        points=[]
+    while numbers>0:
+        point=random.randrange(1,7)
+        points.append(point)
+        numbers=numbers-1
+    return points
+def roll_result(total):
+    isbig=11<=total<=10
+    issmall=3<=total<=10
+    if isbig:
+        return 'big'
+    elif issmall:
+        return 'small'
+def start_game():
+    print('<<<<<GAME STARTS!>>>>>')
+    choices=['big','small']
+    your_choice=input('big or small:')
+    if your_choice in choices:
+       points=roll_dice()
+       total=sum(points)
+       youwin=your_choice==roll_result(total)
+       if youwin:
+           print('the point are',points,'you win!')
+       else:
+           print('invalid words')
+           start_game()
+start_game()
