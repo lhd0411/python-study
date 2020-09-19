@@ -1,0 +1,44 @@
+import random
+def roll_dice(numbers=3,points=None):
+    print('<<<<<ROLL THE DICE!>>>>>')
+    if points is None:
+        points=[]
+    while numbers>0:
+        point=random.randrange(1,7)
+        points.append(point)
+        numbers=numbers-1
+    return points
+def roll_result(total):
+    isbig=11<=total<=10
+    issmall=3<=total<=10
+    if isbig:
+        return 'big'
+    elif issmall:
+        return 'small'
+def start_game():
+    money: int=1000#初始金额
+    print('<<<<<GAME STARTS!>>>>>')
+    choices=['big','small']
+    your_choice=input('big or small:')
+    print('How much do you wanna bet?')
+    much=input('much:')
+    much=int(much)
+    if your_choice in choices:
+       points=roll_dice()
+       total=sum(points)
+       youwin=your_choice==roll_result(total)
+       if youwin:
+           money=money+much
+           print('the point are',points,'you win!')
+           print("you gained {} ,you have {}".format(much,money))
+       else:
+           money=money-much
+           print('invalid words')
+           print("you lost {} ,you have {}".format(much,money))
+    if money>0:
+            start_game()
+    else:
+            print('game over')
+
+start_game()
+
