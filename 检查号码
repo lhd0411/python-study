@@ -1,0 +1,17 @@
+def check_number():
+   CN_mobile=[134,135,136,137,138,139,150,151,152,157,158,155]
+   CN_union=[130,131,132,155,156,185,186,145,176,1709]
+   CN_telecom=[133,153,180,181,189,177,170]
+   number=input('your number:')
+   three_number=int(number[0:3])
+   four_number=int(number[0:4])
+   if len(number)==11:
+       if three_number in CN_mobile or four_number in CN_mobile:
+           print('ok')
+       elif three_number in CN_union:
+           print('okk')
+       elif three_number in CN_telecom:
+           print('o')
+       else:
+           print('no')
+check_number()
