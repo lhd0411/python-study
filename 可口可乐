@@ -1,0 +1,6 @@
+class CocaCola():
+    it_taste='So good!'
+coke_for_bum=CocaCola()
+coke_for_president=CocaCola()
+print(coke_for_bum.it_taste)
+print(coke_for_president.it_taste)
