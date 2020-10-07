@@ -1,0 +1,38 @@
+import turtle
+turtle.bgcolor("white")
+turtle.speed(1)
+turtle.penup()
+
+turtle.left(200)
+
+turtle.fd(100)
+
+turtle.pendown()
+
+turtle.right(90)
+turtle.pensize(4)
+turtle.fillcolor("red")
+turtle.begin_fill()
+turtle.color("red")
+n=0
+while n!=30:
+
+
+    for i in range(4):
+
+
+
+        turtle.forward(20)
+        turtle.right(90)
+        turtle.circle(10, 60)
+        turtle.fd(100)
+
+    turtle.penup()
+    turtle.goto(n,n)
+    turtle.pendown()
+    turtle.right(90)
+    turtle.forward(20)
+    n = n + 10
+turtle.end_fill()
+
+turtle.done()
